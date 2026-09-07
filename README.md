@@ -67,5 +67,61 @@ traffic-object-violation-detection/
 │   └── traffic-object-violiation-detection.ipynb
 │
 ├── README.md
+
+Notebook
+
+The main notebook contains the complete experimental workflow, including:
+
+Environment and GPU setup
+Dataset preparation
+Model configuration
+YOLOv8 experiments
+YOLOv10 experiments
+Multi-seed evaluation
+Additional detector comparisons
+Performance evaluation
+Results analysis
+Model comparison
+
+The notebook is provided with its saved outputs from the completed Kaggle
+experiments.
+
+Reproducibility
+
+The experiments were originally executed in a Kaggle GPU environment.
+
+Because object detection training is computationally expensive, this
+repository does not include the complete dataset or trained model
+weights.
+
+To reproduce the experiments, the user needs:
+
+The original dataset
+A suitable GPU environment
+The dependencies listed in requirements.txt
+The provided notebook
+Limitations
+
+This project focuses on comparative object detection performance.
+Therefore, the presence of traffic-related object classes should not be
+interpreted as a complete end-to-end traffic violation recognition
+system.
+
+Future Work
+
+Potential future improvements include:
+
+Evaluation on additional traffic datasets
+Cross-dataset generalization
+More extensive real-world testing
+Model compression and optimization
+Deployment on edge devices
+Analysis under different environmental conditions
+Author
+
+Javaria Qadeer
+
+PhD Researcher | Data Science | Computer Vision | Machine Learning
+
 ├── requirements.txt
 └── .gitignore
