@@ -16,6 +16,7 @@ The experiments focus on four models:
 Each YOLO model was evaluated using **three random seeds (42, 123, and 456)**. In addition to detection accuracy, the experiments consider computational and deployment-related characteristics such as training time, GPU memory usage, inference speed, and model size.
 
 The experiments were conducted in a **Kaggle GPU environment** using the Ultralytics YOLO framework.
+**[View the Kaggle Notebook](*https://www.kaggle.com/code/javeriaqadeer/traffic-object-violation-detection/edit/run/347269201)**
 
 > **Note:** The notebook contains the experimental workflow and saved results from the completed runs. Reproducing the complete training experiments requires the original dataset and access to a suitable GPU.
 
