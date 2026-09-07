@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Kaggle
+/kaggle/
+
+# Datasets
+data/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+
+# Experiment folders
+runs/
+wandb/
+
+# OS
+.DS_Store
+Thumbs.db
