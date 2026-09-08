@@ -1,6 +1,8 @@
 # Python
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
 
 # Jupyter
 .ipynb_checkpoints/
@@ -12,7 +14,6 @@ __pycache__/
 data/
 *.jpg
 *.jpeg
-*.png
 *.mp4
 
 # Model weights
@@ -20,10 +21,18 @@ data/
 *.pth
 *.onnx
 
-# Experiment folders
+# Experiment outputs
 runs/
 wandb/
+
+# Keep selected repository visualizations
+!outputs/
+!outputs/*.png
 
 # OS
 .DS_Store
 Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
