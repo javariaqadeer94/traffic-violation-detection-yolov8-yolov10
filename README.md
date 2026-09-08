@@ -184,29 +184,38 @@ This prevents completed experiments from being unnecessarily retrained when a Ka
 
 ## Experimental Results
 
-The notebook maintains the results of individual model/seed experiments in JSON format.
+All four models were evaluated using three random seeds (42, 123, and 456), resulting in 12 completed experimental runs.
 
-The stored information includes:
+### Multi-Seed Detection Performance
 
-* Model
-* Random seed
-* Training status
-* Number of epochs
-* mAP50
-* mAP50-95
-* Precision
-* Recall
-* Training time
-* GPU memory usage
-* FPS
-* Model size
-* Resume information
-* Best model path, where available
+Results are reported as **mean ± standard deviation** across the three random seeds.
 
-The results are subsequently aggregated for multi-seed statistical analysis.
+| Model | mAP@50 | mAP@50:95 | Precision | Recall |
+|---|---:|---:|---:|---:|
+| YOLOv8n | 0.915 ± 0.006 | 0.795 ± 0.006 | 0.892 ± 0.014 | 0.877 ± 0.009 |
+| YOLOv8m | **0.924 ± 0.004** | 0.803 ± 0.004 | 0.894 ± 0.018 | **0.892 ± 0.013** |
+| YOLOv10n | 0.901 ± 0.005 | 0.786 ± 0.005 | 0.893 ± 0.011 | 0.835 ± 0.012 |
+| YOLOv10m | 0.921 ± 0.005 | **0.807 ± 0.002** | **0.902 ± 0.019** | 0.886 ± 0.007 |
 
----
+### Computational Comparison
 
+| Model | Training Time (min) | GPU Memory (MB) | FPS | Model Size (MB) |
+|---|---:|---:|---:|---:|
+| YOLOv8n | **102.00 ± 2.32** | **1985.43 ± 39.01** | **69.86 ± 24.28** | 5.95 |
+| YOLOv8m | 251.87 ± 131.39 | 5298.62 ± 951.97 | 33.83 ± 2.38 | 49.62 |
+| YOLOv10n | 136.56 ± 5.14 | 2682.18 ± 50.17 | 63.13 ± 18.88 | **5.48** |
+| YOLOv10m | 391.84 ± 14.26 | 7856.36 ± 39.21 | 36.65 ± 1.82 | 31.95 |
+
+### Key Findings
+
+- **YOLOv10m achieved the highest mAP@50:95** with 0.807 ± 0.002.
+- **YOLOv8m achieved the highest mAP@50** with 0.924 ± 0.004.
+- **YOLOv10m achieved the highest mean precision** at 0.902 ± 0.019.
+- **YOLOv8m achieved the highest mean recall** at 0.892 ± 0.013.
+- **YOLOv8n provided the fastest average inference speed** at approximately 69.86 FPS.
+- **YOLOv10n was the smallest model** at 5.48 MB.
+- The medium-sized models required substantially more GPU memory and training time than the nano models.
+- Multi-seed evaluation demonstrates that model rankings can vary depending on the evaluation metric, highlighting the importance of considering both accuracy and computational efficiency.
 ## Visualizations
 
 The notebook generates comparative plots to analyze model performance.
